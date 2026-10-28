@@ -10,22 +10,14 @@
 <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,600;12..96,700&family=Source+Sans+3:wght@400;500;600&display=swap" rel="stylesheet">
 <style>
 :root{
-  --bg:#ffffff; --soft:#f5f6f8; --surface:#ffffff; --ink:#1b1e27; --muted:#5b6170; --line:#e2e5ea;
+  --bg:#ffffff; --soft:#ffffff; --surface:#ffffff; --ink:#1b1e27; --muted:#5b6170; --line:#e2e5ea;
   --brand:#8a1c2e; --brand-ink:#ffffff; --brand-soft:#f6e6e9;
   --open:#17794a; --open-soft:#e1f4ea; --shut:#a3302b; --shut-soft:#fbe9e7;
   --radius:18px;
   color-scheme:light;
 }
-@media (prefers-color-scheme:dark){
-  :root:not([data-theme="light"]){
-    --bg:#13151a; --soft:#13151a; --surface:#1b1e26; --ink:#eceef2; --muted:#a2a8b6; --line:#2c303b;
-    --brand:#e0788a; --brand-ink:#1b1e26; --brand-soft:#3a2229;
-    --open:#5fd193; --open-soft:#17302403; --shut:#f0877f; --shut-soft:#3a1f1d;
-    color-scheme:dark;
-  }
-}
 *{box-sizing:border-box;margin:0}
-html{scroll-behavior:smooth}
+html{scroll-behavior:smooth;background:#ffffff}
 body{font-family:"Source Sans 3",system-ui,sans-serif;background:var(--bg);color:var(--ink);line-height:1.6;font-size:1.05rem}
 a{color:var(--brand);text-underline-offset:3px}
 a:focus-visible,button:focus-visible,summary:focus-visible{outline:3px solid var(--brand);outline-offset:3px;border-radius:6px}
@@ -33,6 +25,7 @@ a:focus-visible,button:focus-visible,summary:focus-visible{outline:3px solid var
 h1,h2,h3{font-family:"Bricolage Grotesque",system-ui,sans-serif;line-height:1.12;letter-spacing:-.02em}
 
 /* Hero */
+.sr{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
 header.hero{background:var(--brand);color:var(--brand-ink);padding:3rem 0 5.5rem}
 .crumb{font-size:.95rem;opacity:.85;margin-bottom:1rem}
 .hero h1{font-size:clamp(2.2rem,6vw,4rem);max-width:15ch}
@@ -44,7 +37,7 @@ header.hero{background:var(--brand);color:var(--brand-ink);padding:3rem 0 5.5rem
 .btn.solid:hover{background:rgba(255,255,255,.88)}
 
 /* Estado en vivo */
-.status{margin-top:-3.2rem;background:var(--surface);border:1px solid var(--line);border-radius:var(--radius);padding:1.4rem 1.6rem;display:flex;flex-wrap:wrap;align-items:center;gap:1rem 2rem;box-shadow:0 10px 30px -18px rgba(0,0,0,.35)}
+.status{margin-top:1.25rem;background:var(--surface);border:1px solid var(--line);border-radius:var(--radius);padding:1.4rem 1.6rem;display:flex;flex-wrap:wrap;align-items:center;gap:1rem 2rem;box-shadow:0 10px 30px -18px rgba(0,0,0,.35)}
 .pill{display:inline-flex;align-items:center;gap:.55rem;padding:.4rem .9rem;border-radius:999px;font-weight:600;background:var(--shut-soft);color:var(--shut)}
 .pill::before{content:"";width:.6rem;height:.6rem;border-radius:50%;background:currentColor}
 .pill.open{background:var(--open-soft);color:var(--open)}
@@ -55,7 +48,7 @@ header.hero{background:var(--brand);color:var(--brand-ink);padding:3rem 0 5.5rem
 .status .grow{flex:1 1 260px}
 
 /* Layout */
-main{padding:2.5rem 0 4rem;display:grid;gap:1.5rem;grid-template-columns:repeat(12,1fr)}
+main{padding:1.5rem 0 2.5rem;display:grid;gap:1.5rem;grid-template-columns:repeat(12,1fr)}
 .card{background:var(--surface);border:1px solid var(--line);border-radius:var(--radius);padding:1.6rem;grid-column:span 12}
 .card h2{font-size:1.45rem;margin-bottom:.9rem}
 @media(min-width:820px){
@@ -78,7 +71,7 @@ main{padding:2.5rem 0 4rem;display:grid;gap:1.5rem;grid-template-columns:repeat(
 
 /* Contacto */
 .mail{display:block;font-family:"Bricolage Grotesque",sans-serif;font-weight:700;font-size:1.25rem;word-break:break-all;margin:.9rem 0}
-.note{background:var(--soft);border-radius:12px;padding:.9rem 1rem;color:var(--muted);font-size:.98rem;margin-top:.8rem}
+.note{background:#fff;border:1px solid var(--line);border-radius:12px;padding:.9rem 1rem;color:var(--muted);font-size:.98rem;margin-top:.8rem}
 
 /* Teléfonos */
 .phones{display:grid;gap:.9rem}
@@ -89,7 +82,7 @@ main{padding:2.5rem 0 4rem;display:grid;gap:1.5rem;grid-template-columns:repeat(
 
 /* Cómo llegar */
 .transport{display:flex;flex-wrap:wrap;gap:.6rem;margin-bottom:1rem}
-.chip{display:inline-flex;align-items:center;gap:.5rem;padding:.45rem .9rem;border-radius:12px;background:var(--soft);font-weight:500}
+.chip{display:inline-flex;align-items:center;gap:.5rem;padding:.45rem .9rem;border-radius:12px;background:#fff;border:1px solid var(--line);font-weight:500}
 .chip i{font-style:normal;font-weight:700;background:var(--brand);color:var(--brand-ink);padding:.05rem .5rem;border-radius:6px;font-size:.9rem}
 .chip i.metro{background:#a2a4a6;color:#fff;border-radius:50%;padding:.05rem .55rem}
 .map{border:0;width:100%;height:300px;border-radius:12px;background:var(--soft)}
@@ -125,17 +118,7 @@ footer{border-top:1px solid var(--line);padding:1.5rem 0 2.5rem;color:var(--mute
   <symbol id="i-chat" viewBox="0 0 24 24"><path d="M4 5h16v11H9l-5 4z"/></symbol>
 </svg>
 
-<header class="hero">
-  <div class="wrap">
-    <p class="crumb">Facultad de Educación · Universidad Complutense de Madrid</p>
-    <h1>Secretaría de Estudiantes</h1>
-    <p>Matrícula, expedientes y trámites de fin de estudios. Consulta cuándo estamos abiertos y cómo contactar con nosotros.</p>
-    <div class="quick">
-      <a class="btn solid" href="#horarios"><svg class="ic"><use href="#i-clock"/></svg>Ver horarios</a>
-      <a class="btn" href="#contacto"><svg class="ic"><use href="#i-chat"/></svg>Cómo contactar</a>
-    </div>
-  </div>
-</header>
+<h1 class="sr">Secretaría de Estudiantes · Facultad de Educación UCM</h1>
 
 <div class="wrap">
   <section class="status" aria-live="polite">
