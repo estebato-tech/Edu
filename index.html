@@ -37,16 +37,15 @@ header.hero{background:var(--brand);color:var(--brand-ink);padding:3rem 0 5.5rem
 .btn.solid:hover{background:rgba(255,255,255,.88)}
 
 /* Estado en vivo */
-.status{margin-top:1.25rem;background:var(--surface);border:1px solid var(--line);border-radius:var(--radius);padding:1.4rem 1.6rem;display:flex;flex-wrap:wrap;align-items:center;gap:1rem 2rem;box-shadow:0 10px 30px -18px rgba(0,0,0,.35)}
 .pill{display:inline-flex;align-items:center;gap:.55rem;padding:.4rem .9rem;border-radius:999px;font-weight:600;background:var(--shut-soft);color:var(--shut)}
 .pill::before{content:"";width:.6rem;height:.6rem;border-radius:50%;background:currentColor}
 .pill.open{background:var(--open-soft);color:var(--open)}
 .pill.open::before{animation:pulse 2s ease-out infinite}
 @keyframes pulse{0%{box-shadow:0 0 0 0 currentColor}70%,100%{box-shadow:0 0 0 .55rem transparent}}
-.status h2{font-size:1.5rem}
-.status .sub{color:var(--muted)}
-.status .grow{flex:1 1 260px}
 
+.live{display:flex;flex-wrap:wrap;align-items:center;gap:.6rem 1rem;background:var(--soft);border-radius:14px;padding:.9rem 1.1rem;margin-bottom:1.1rem}
+.live-t{font-family:"Bricolage Grotesque",system-ui,sans-serif;font-weight:700;font-size:1.2rem;line-height:1.2;letter-spacing:-.01em}
+.live .sub{color:var(--muted);font-size:.98rem}
 /* Layout */
 main{padding:1.5rem 0 2.5rem;display:grid;gap:1.5rem;grid-template-columns:repeat(12,1fr)}
 .card{background:var(--surface);border:1px solid var(--line);border-radius:var(--radius);padding:1.6rem;grid-column:span 12;box-shadow:0 1px 2px rgba(20,24,40,.06),0 14px 32px -18px rgba(20,24,40,.35)}
@@ -54,13 +53,20 @@ main{padding:1.5rem 0 2.5rem;display:grid;gap:1.5rem;grid-template-columns:repea
 @media(min-width:820px){
   .c-horarios{grid-column:span 7}
   .c-contacto{grid-column:span 5}
-  .c-tel{grid-column:span 5}
-  .c-llegar{grid-column:span 7}
+  .c-tel{grid-column:span 7}
+  .c-llegar{grid-column:span 5}
 }
 
 /* Horarios */
 .season{border-top:1px solid var(--line);padding:1rem 0}
 .season:first-of-type{border-top:0;padding-top:0}
+.season .tag{font-style:normal;font-size:.78rem;font-weight:600;background:var(--brand);color:#fff;padding:.1rem .55rem;border-radius:999px;letter-spacing:0}
+.otros{margin-top:.6rem;border-top:1px solid var(--line)}
+.otros summary{cursor:pointer;list-style:none;display:flex;align-items:center;gap:.5rem;padding:.8rem 0 .2rem;font-weight:600;color:var(--brand)}
+.otros summary::-webkit-details-marker{display:none}
+.otros summary::after{content:"";width:.55rem;height:.55rem;border-right:2px solid currentColor;border-bottom:2px solid currentColor;transform:rotate(45deg) translateY(-2px);transition:transform .2s}
+.otros[open] summary::after{transform:rotate(-135deg) translateY(-2px)}
+.otros .season:first-of-type{border-top:0}
 .season.now{background:var(--brand-soft);margin:0 -.9rem;padding:1rem .9rem;border-radius:12px;border-top:0}
 .season h3{font-size:1.05rem;display:flex;flex-wrap:wrap;gap:.2rem .7rem;align-items:baseline}
 .season h3 small{font-family:"Source Sans 3",sans-serif;font-weight:500;color:var(--muted);font-size:.92rem;letter-spacing:0}
@@ -85,7 +91,7 @@ main{padding:1.5rem 0 2.5rem;display:grid;gap:1.5rem;grid-template-columns:repea
 .chip{display:inline-flex;align-items:center;gap:.5rem;padding:.45rem .9rem;border-radius:12px;background:var(--soft);font-weight:500}
 .chip i{font-style:normal;font-weight:700;background:var(--brand);color:var(--brand-ink);padding:.05rem .5rem;border-radius:6px;font-size:.9rem}
 .chip i.metro{background:#a2a4a6;color:#fff;border-radius:50%;padding:.05rem .55rem}
-.map{border:0;width:100%;height:300px;border-radius:12px;background:var(--soft)}
+.map{border:0;width:100%;height:170px;border-radius:12px;background:var(--soft)}
 
 .ic{width:1.25em;height:1.25em;fill:none;stroke:currentColor;stroke-width:2;stroke-linecap:round;stroke-linejoin:round;flex:none;vertical-align:-.2em}
 .card h2 .ic{color:var(--brand);margin-right:.35rem;width:1.1em;height:1.1em}
@@ -99,6 +105,11 @@ main{padding:1.5rem 0 2.5rem;display:grid;gap:1.5rem;grid-template-columns:repea
 .res a{padding:1rem 1.1rem;border:1px solid var(--line);border-radius:14px;text-decoration:none;color:var(--ink);font-weight:600;transition:border-color .15s,background .15s}
 .res a .txt span{display:block;font-weight:400;color:var(--muted);font-size:.95rem}
 .res a:hover{border-color:var(--brand);background:var(--brand-soft)}
+.res a.feat{grid-column:1/-1;background:var(--brand);border-color:var(--brand);color:#fff;font-size:1.15rem;box-shadow:0 10px 24px -14px rgba(138,28,46,.9)}
+.res a.feat .txt span{color:rgba(255,255,255,.85)}
+.res a.feat .ico{background:rgba(255,255,255,.18);color:#fff}
+.res a.feat .ext{color:#fff}
+.res a.feat:hover{background:#6f1424;border-color:#6f1424}
 
 footer{border-top:1px solid var(--line);padding:1.5rem 0 2.5rem;color:var(--muted);font-size:.95rem}
 @media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important;scroll-behavior:auto!important}}
@@ -121,17 +132,17 @@ footer{border-top:1px solid var(--line);padding:1.5rem 0 2.5rem;color:var(--mute
 <h1 class="sr">Secretaría de Estudiantes · Facultad de Educación UCM</h1>
 
 <div class="wrap">
-  <section class="status" aria-live="polite">
-    <span class="pill" id="pill">Comprobando…</span>
-    <div class="grow">
-      <h2 id="statusTitle">Atención al público</h2>
-      <p class="sub" id="statusSub"></p>
-    </div>
-  </section>
-
   <main>
     <section class="card c-horarios" id="horarios">
       <h2><svg class="ic"><use href="#i-clock"/></svg>Horario de atención al público</h2>
+
+      <div class="live" aria-live="polite">
+        <span class="pill" id="pill">Comprobando…</span>
+        <div>
+          <p class="live-t" id="statusTitle"></p>
+          <p class="sub" id="statusSub"></p>
+        </div>
+      </div>
 
       <div class="season" data-season="ordinario">
         <h3>Horario ordinario <small>1 de octubre – 31 de mayo</small></h3>
@@ -168,7 +179,7 @@ footer{border-top:1px solid var(--line);padding:1.5rem 0 2.5rem;color:var(--mute
     <section class="card" style="grid-column:span 12">
       <h2><svg class="ic"><use href="#i-info"/></svg>Información para estudiantes</h2>
       <div class="res">
-        <a href="https://educacion.ucm.es/secretaria-de-estudiantes" target="_top" rel="noopener"><span class="ico"><svg class="ic"><use href="#i-info"/></svg></span><span class="txt">Información general para estudiantes<span>Web de la Secretaría</span></span><svg class="ic ext"><use href="#i-ext"/></svg></a>
+        <a class="feat" href="https://educacion.ucm.es/secretaria-de-estudiantes" target="_top" rel="noopener"><span class="ico"><svg class="ic"><use href="#i-info"/></svg></span><span class="txt">Información general para estudiantes<span>Web de la Secretaría</span></span><svg class="ic ext"><use href="#i-ext"/></svg></a>
         <a href="https://www.youtube.com/watch?v=p0KmqK3leIo" target="_top" rel="noopener"><span class="ico"><svg class="ic"><use href="#i-play"/></svg></span><span class="txt">¿Cómo hacer la matrícula?<span>Vídeo tutorial</span></span><svg class="ic ext"><use href="#i-ext"/></svg></a>
         <a href="https://educacion.ucm.es/file/guia-ultimos-tramites-2026-1?ver" target="_top" rel="noopener"><span class="ico"><svg class="ic"><use href="#i-file"/></svg></span><span class="txt">Guía de trámites de fin de estudios<span>Documento PDF</span></span><svg class="ic ext"><use href="#i-ext"/></svg></a>
       </div>
@@ -228,7 +239,19 @@ footer{border-top:1px solid var(--line);padding:1.5rem 0 2.5rem;color:var(--mute
   var now = new Date(), cur = now.getHours()*M + now.getMinutes();
   var s = season(now);
   var sec = document.querySelector('[data-season="'+(s==='cerrado'?'verano':s)+'"]');
-  if (sec) sec.classList.add('now');
+  if (sec){
+    sec.classList.add('now');
+    var tg = document.createElement('em'); tg.className = 'tag'; tg.textContent = 'Vigente';
+    sec.querySelector('h3').appendChild(tg);
+    var others = [].slice.call(document.querySelectorAll('.season')).filter(function(x){ return x !== sec; });
+    if (others.length){
+      var det = document.createElement('details'); det.className = 'otros';
+      var sm = document.createElement('summary'); sm.textContent = 'Ver otros periodos';
+      det.appendChild(sm);
+      others.forEach(function(x){ det.appendChild(x); });
+      sec.parentNode.appendChild(det);
+    }
+  }
 
   var today = slots(now), openSlot = null, nextToday = null;
   today.forEach(function(r){
