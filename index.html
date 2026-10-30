@@ -12,7 +12,7 @@
 :root{
   --bg:#ffffff; --soft:#f5f6f8; --surface:#ffffff; --ink:#1b1e27; --muted:#5b6170; --line:#e2e5ea;
   --brand:#8a1c2e; --brand-ink:#ffffff; --brand-soft:#f6e6e9;
-  --open:#17794a; --open-soft:#e1f4ea; --shut:#a3302b; --shut-soft:#fbe9e7;
+  --warn:#8a5a00; --warn-soft:#fff3d6; --open:#17794a; --open-soft:#e1f4ea; --shut:#a3302b; --shut-soft:#fbe9e7;
   --radius:18px;
   color-scheme:light;
 }
@@ -40,12 +40,23 @@ header.hero{background:var(--brand);color:var(--brand-ink);padding:3rem 0 5.5rem
 .pill{display:inline-flex;align-items:center;gap:.55rem;padding:.4rem .9rem;border-radius:999px;font-weight:600;background:var(--shut-soft);color:var(--shut)}
 .pill::before{content:"";width:.6rem;height:.6rem;border-radius:50%;background:currentColor}
 .pill.open{background:var(--open-soft);color:var(--open)}
+.pill.warn{background:var(--warn-soft);color:var(--warn)}
 .pill.open::before{animation:pulse 2s ease-out infinite}
 @keyframes pulse{0%{box-shadow:0 0 0 0 currentColor}70%,100%{box-shadow:0 0 0 .55rem transparent}}
 
 .live{display:flex;flex-wrap:wrap;align-items:center;gap:.6rem 1rem;background:var(--soft);border-radius:14px;padding:.9rem 1.1rem;margin-bottom:1.1rem}
 .live-t{font-family:"Bricolage Grotesque",system-ui,sans-serif;font-weight:700;font-size:1.2rem;line-height:1.2;letter-spacing:-.01em}
 .live .sub{color:var(--muted);font-size:.98rem}
+.avisos{display:grid;gap:.6rem;margin-bottom:1.1rem}
+.aviso{display:flex;gap:.8rem;align-items:flex-start;padding:.85rem 1rem;border-radius:14px;border:1px solid var(--line);background:#fff}
+.aviso .ic{margin-top:.15rem}
+.aviso b{display:block;font-weight:600}
+.aviso span{color:var(--muted);font-size:.97rem}
+.aviso.cerrado{background:var(--shut-soft);border-color:transparent}
+.aviso.cerrado .ic,.aviso.cerrado b{color:var(--shut)}
+.aviso.alterado{background:var(--warn-soft);border-color:transparent}
+.aviso.alterado .ic,.aviso.alterado b{color:var(--warn)}
+.aviso.alterado span{color:#5c4000}
 /* Layout */
 main{padding:1.5rem 0 2.5rem;display:grid;gap:1.5rem;grid-template-columns:repeat(12,1fr)}
 .card{background:var(--surface);border:1px solid var(--line);border-radius:var(--radius);padding:1.6rem;grid-column:span 12;box-shadow:0 1px 2px rgba(20,24,40,.06),0 14px 32px -18px rgba(20,24,40,.35)}
@@ -126,6 +137,7 @@ footer{border-top:1px solid var(--line);padding:1.5rem 0 2.5rem;color:var(--mute
   <symbol id="i-file" viewBox="0 0 24 24"><path d="M14 3H7a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V8z"/><path d="M14 3v5h5M9 13h6M9 17h6"/></symbol>
   <symbol id="i-bus" viewBox="0 0 24 24"><rect x="4" y="3" width="16" height="15" rx="3"/><path d="M4 11h16M8 21v-3M16 21v-3M8 15h.01M16 15h.01"/></symbol>
   <symbol id="i-ext" viewBox="0 0 24 24"><path d="M14 4h6v6M20 4l-9 9M18 14v5a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1V7a1 1 0 0 1 1-1h5"/></symbol>
+  <symbol id="i-alert" viewBox="0 0 24 24"><path d="M12 3 2 20h20z"/><path d="M12 10v4M12 17h.01"/></symbol>
   <symbol id="i-chat" viewBox="0 0 24 24"><path d="M4 5h16v11H9l-5 4z"/></symbol>
 </svg>
 
@@ -135,6 +147,8 @@ footer{border-top:1px solid var(--line);padding:1.5rem 0 2.5rem;color:var(--mute
   <main>
     <section class="card c-horarios" id="horarios">
       <h2><svg class="ic"><use href="#i-clock"/></svg>Horario de atención al público</h2>
+
+      <div class="avisos" id="avisos"></div>
 
       <div class="live" aria-live="polite">
         <span class="pill" id="pill">Comprobando…</span>
@@ -218,6 +232,13 @@ footer{border-top:1px solid var(--line);padding:1.5rem 0 2.5rem;color:var(--mute
 
 <script>
 (function(){
+  // Excepciones al calendario (clave AAAA-MM-DD, hora local)
+  var EXC = {
+    '2026-11-02': {tipo:'cerrado'},
+    '2026-11-04': {tipo:'alterado'},
+    '2026-11-05': {tipo:'alterado'}
+  };
+  var MESES = ['enero','febrero','marzo','abril','mayo','junio','julio','agosto','septiembre','octubre','noviembre','diciembre'];
   var M = 60, DIAS = ['domingo','lunes','martes','miércoles','jueves','viernes','sábado'];
   function season(d){
     var m = d.getMonth()+1, day = d.getDate();
@@ -230,10 +251,14 @@ footer{border-top:1px solid var(--line);padding:1.5rem 0 2.5rem;color:var(--mute
   function slots(d){
     var w = d.getDay(), s = season(d), out = [];
     if (w===0 || w===6 || s==='cerrado') return out;
+    if (exc(d) && exc(d).tipo==='cerrado') return out;
     if (s==='ordinario'){ out.push([10*M,14*M]); if (w<=3) out.push([15.5*M,17*M]); }
     else { out.push([10*M,13*M]); if (s==='septiembre' && (w===1||w===3)) out.push([15.5*M,17*M]); }
     return out;
   }
+  function key(d){ var m=d.getMonth()+1, day=d.getDate(); return d.getFullYear()+'-'+(m<10?'0':'')+m+'-'+(day<10?'0':'')+day; }
+  function exc(d){ return EXC[key(d)] || null; }
+  function larga(d){ return DIAS[d.getDay()] + ' ' + d.getDate() + ' de ' + MESES[d.getMonth()]; }
   function hh(min){ var h=Math.floor(min/60), m=Math.round(min%60); return h+':'+(m<10?'0':'')+m; }
 
   var now = new Date(), cur = now.getHours()*M + now.getMinutes();
@@ -253,14 +278,59 @@ footer{border-top:1px solid var(--line);padding:1.5rem 0 2.5rem;color:var(--mute
     }
   }
 
+  var avisos = document.getElementById('avisos'), hoy0 = new Date(now.getFullYear(), now.getMonth(), now.getDate());
+  var ks = Object.keys(EXC).sort(), grupos = [];
+  ks.forEach(function(k){
+    var p = k.split('-'), d = new Date(+p[0], +p[1]-1, +p[2]);
+    if (d < hoy0) return;
+    var t = EXC[k].tipo, g = grupos[grupos.length-1];
+    if (g && g.tipo===t && Math.round((d-g.fin)/864e5)===1) { g.fin = d; } else { grupos.push({tipo:t, ini:d, fin:d}); }
+  });
+  grupos.forEach(function(g){
+    var fecha = g.ini.getTime()===g.fin.getTime() ? larga(g.ini) : DIAS[g.ini.getDay()] + ' ' + g.ini.getDate() + ' y ' + DIAS[g.fin.getDay()] + ' ' + g.fin.getDate() + ' de ' + MESES[g.fin.getMonth()];
+    var el = document.createElement('div');
+    if (g.tipo==='cerrado'){
+      el.className = 'aviso cerrado';
+      el.innerHTML = '<svg class="ic"><use href="#i-alert"/></svg><div><b></b><span>La Secretaría permanece cerrada.</span></div>';
+      el.querySelector('b').textContent = 'Cerrado: ' + fecha;
+    } else {
+      el.className = 'aviso alterado';
+      el.innerHTML = '<svg class="ic"><use href="#i-alert"/></svg><div><b></b><span>Por la convocatoria de huelga, el servicio podría no prestarse con normalidad.</span></div>';
+      el.querySelector('b').textContent = 'Atención no garantizada: ' + fecha;
+    }
+    avisos.appendChild(el);
+  });
+  if (!grupos.length) avisos.hidden = true;
+
+  var ex = exc(now);
   var today = slots(now), openSlot = null, nextToday = null;
   today.forEach(function(r){
     if (cur>=r[0] && cur<r[1]) openSlot = r;
     else if (cur<r[0] && !nextToday) nextToday = r;
   });
 
+  function proximo(){
+    for (var i=1;i<=60;i++){
+      var d = new Date(now); d.setDate(d.getDate()+i);
+      var sl = slots(d);
+      if (sl.length){
+        var e2 = exc(d), txt = i===1 ? 'mañana' : 'el ' + larga(d);
+        return 'Volvemos a abrir ' + txt + ' a las ' + hh(sl[0][0]) + (e2 && e2.tipo==='alterado' ? ', aunque ese día la atención no está garantizada.' : '.');
+      }
+    }
+    return '';
+  }
   var pill = document.getElementById('pill'), title = document.getElementById('statusTitle'), sub = document.getElementById('statusSub');
-  if (openSlot){
+  if (ex && ex.tipo==='cerrado'){
+    pill.textContent = 'Cerrado hoy';
+    title.textContent = 'Hoy la Secretaría permanece cerrada';
+    sub.textContent = 'Consulta el próximo día de apertura más abajo.';
+    var nx = proximo(); if (nx) sub.textContent = nx;
+  } else if (ex && ex.tipo==='alterado'){
+    pill.textContent = 'Atención no garantizada'; pill.classList.add('warn');
+    title.textContent = 'Hoy el servicio puede no prestarse con normalidad';
+    sub.textContent = 'Por la convocatoria de huelga.';
+  } else if (openSlot){
     pill.textContent = 'Abierto ahora'; pill.classList.add('open');
     title.textContent = 'Atendemos hasta las ' + hh(openSlot[1]);
     sub.textContent = 'Hoy, ' + DIAS[now.getDay()] + ', de ' + hh(openSlot[0]) + ' a ' + hh(openSlot[1]) + '.';
@@ -276,7 +346,8 @@ footer{border-top:1px solid var(--line);padding:1.5rem 0 2.5rem;color:var(--mute
         if (sl.length){
           var cuando = i===1 ? 'mañana' : 'el ' + DIAS[d.getDay()] + ' ' + d.getDate() + '/' + (d.getMonth()+1);
           title.textContent = 'Abrimos ' + cuando + ' a las ' + hh(sl[0][0]);
-          sub.textContent = s==='cerrado' ? 'En agosto la Secretaría permanece cerrada. Puedes escribirnos por correo.' : 'Puedes escribirnos por correo mientras tanto.';
+          var e3 = exc(d);
+          sub.textContent = (e3 && e3.tipo==='alterado') ? 'Ese día la atención no está garantizada por convocatoria de huelga. Puedes escribirnos por correo.' : (s==='cerrado' ? 'En agosto la Secretaría permanece cerrada. Puedes escribirnos por correo.' : 'Puedes escribirnos por correo mientras tanto.');
           break;
         }
       }
