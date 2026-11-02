@@ -1,1 +1,75 @@
-
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Titulaciones susceptibles de convalidación · Facultad de Educación UCM</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,600;12..96,700&family=Source+Sans+3:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#fff;--soft:#f5f6f8;--surface:#fff;--ink:#1b1e27;--muted:#5b6170;--line:#e2e5ea;--brand:#8a1c2e;--brand-soft:#f6e6e9;--radius:14px;color-scheme:light}
+*{box-sizing:border-box;margin:0}
+[hidden]{display:none!important}
+html{background:#fff}
+body{font-family:"Source Sans 3",system-ui,sans-serif;background:var(--bg);color:var(--ink);line-height:1.45;font-size:.79rem}
+a:focus-visible,input:focus-visible{outline:3px solid var(--brand);outline-offset:3px;border-radius:9px}
+h1,h2{font-family:"Bricolage Grotesque",system-ui,sans-serif;line-height:1.15;letter-spacing:-.02em}
+.sr{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+.wrap{max-width:1080px;margin:0 auto;padding:.94rem}
+.ic{width:1.25em;height:1.25em;fill:none;stroke:currentColor;stroke-width:2;stroke-linecap:round;stroke-linejoin:round;flex:none;vertical-align:-.2em}
+.search{position:relative;margin-bottom:1.1rem}
+.search .ic{position:absolute;left:.75rem;top:50%;transform:translateY(-50%);color:var(--muted)}
+.search input{width:100%;font:inherit;padding:.64rem .75rem .64rem 2.1rem;border:1px solid var(--line);border-radius:999px;background:#fff;color:var(--ink);box-shadow:0 1px 2px rgba(20,24,40,.06)}
+main{display:grid;gap:.75rem;grid-template-columns:repeat(auto-fill,minmax(250px,1fr))}
+.card{background:var(--surface);border:1px solid var(--line);border-radius:var(--radius);padding:.85rem .95rem;box-shadow:0 1px 2px rgba(20,24,40,.06),0 10px 24px -16px rgba(20,24,40,.35)}
+.card h2{display:flex;align-items:center;gap:.6rem;font-size:.98rem;margin-bottom:.65rem}
+.ico{display:grid;place-items:center;width:1.95rem;height:1.95rem;border-radius:9px;background:var(--brand-soft);color:var(--brand);flex:none}
+.ico .ic{width:1.05rem;height:1.05rem}
+.plans{list-style:none;padding:0;display:flex;flex-wrap:wrap;gap:.4rem}
+.plans a{display:inline-flex;align-items:center;padding:.3rem .8rem;border:1px solid var(--line);border-radius:999px;text-decoration:none;color:var(--ink);font-weight:600;transition:border-color .15s,background .15s,color .15s}
+.plans a:hover{border-color:var(--brand);background:var(--brand-soft);color:var(--brand)}
+.empty{display:none;text-align:center;color:var(--muted);padding:1.5rem 0}
+@media (prefers-reduced-motion:reduce){*{transition:none!important}}
+</style>
+</head>
+<body>
+<svg width="0" height="0" style="position:absolute" aria-hidden="true"><symbol id="i-book" viewBox="0 0 24 24"><path d="M5 4h13v16H7a2 2 0 0 1-2-2z"/><path d="M5 18a2 2 0 0 1 2-2h11"/></symbol><symbol id="i-cap" viewBox="0 0 24 24"><path d="m2 9 10-5 10 5-10 5z"/><path d="M6 11v5c3 2.5 9 2.5 12 0v-5"/></symbol><symbol id="i-brain" viewBox="0 0 24 24"><path d="M9 4a3 3 0 0 0-3 3 3 3 0 0 0-2 5 3 3 0 0 0 2 5 3 3 0 0 0 6 1V5a3 3 0 0 0-3-1z"/><path d="M15 4a3 3 0 0 1 3 3 3 3 0 0 1 2 5 3 3 0 0 1-2 5 3 3 0 0 1-6 1"/></symbol><symbol id="i-users" viewBox="0 0 24 24"><circle cx="9" cy="8" r="3.5"/><path d="M2 20a7 7 0 0 1 14 0"/><path d="M16 4.5a3.5 3.5 0 0 1 0 7M18 20a7 7 0 0 0-3-5.7"/></symbol><symbol id="i-music" viewBox="0 0 24 24"><path d="M9 18V5l11-2v13"/><circle cx="6" cy="18" r="3"/><circle cx="17" cy="16" r="3"/></symbol><symbol id="i-chat" viewBox="0 0 24 24"><path d="M4 5h16v11H9l-5 4z"/><path d="M8 9h8M8 12h5"/></symbol><symbol id="i-globe" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3a14 14 0 0 1 0 18M12 3a14 14 0 0 0 0 18"/></symbol><symbol id="i-smile" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M8 14a5 5 0 0 0 8 0M9 9.5h.01M15 9.5h.01"/></symbol><symbol id="i-pencil" viewBox="0 0 24 24"><path d="M4 20l1-4L16 5l3 3L8 19z"/><path d="m14 7 3 3"/></symbol><symbol id="i-run" viewBox="0 0 24 24"><circle cx="14" cy="4.5" r="2"/><path d="m6 21 4-6 3 2 2 4M10 15l-2-4 4-3 3 3h3M9 8l-3 1"/></symbol><symbol id="i-heart" viewBox="0 0 24 24"><path d="M12 20s-8-5-8-11a4.5 4.5 0 0 1 8-2.5A4.5 4.5 0 0 1 20 9c0 6-8 11-8 11z"/></symbol><symbol id="i-ext" viewBox="0 0 24 24"><path d="M14 4h6v6M20 4l-9 9M18 14v5a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1V7a1 1 0 0 1 1-1h5"/></symbol><symbol id="i-search" viewBox="0 0 24 24"><circle cx="11" cy="11" r="7"/><path d="m20 20-4-4"/></symbol></svg>
+<h1 class="sr">Titulaciones susceptibles de convalidación · Facultad de Educación UCM</h1>
+<div class="wrap">
+  <div class="search"><svg class="ic"><use href="#i-search"/></svg><input id="q" type="search" placeholder="Buscar una titulación… (Pedagogía, Primaria, Plan 96)" aria-label="Buscar una titulación" autocomplete="off"></div>
+  <main>
+    <section class="card"><h2><span class="ico"><svg class="ic"><use href="#i-book"/></svg></span>Filosofía y CC. de la Educación (Secc. CC. de la Educación)</h2><ul class="plans"><li data-l="Filosofía y CC. de la Educación (Secc. CC. de la Educación) (Plan 76)"><a href="https://educacion.ucm.es/pedagogia-plan-76-2022" target="_top" rel="noopener" aria-label="Filosofía y CC. de la Educación (Secc. CC. de la Educación) (Plan 76)">Plan 76</a></li></ul></section>
+    <section class="card"><h2><span class="ico"><svg class="ic"><use href="#i-cap"/></svg></span>Pedagogía</h2><ul class="plans"><li data-l="Pedagogía (Plan 93)"><a href="https://educacion.ucm.es/pedagogia-plan-93-2022" target="_top" rel="noopener" aria-label="Pedagogía (Plan 93)">Plan 93</a></li><li data-l="Pedagogía (Plan 2000)"><a href="https://educacion.ucm.es/pedagogia-plan-2000-2022" target="_top" rel="noopener" aria-label="Pedagogía (Plan 2000)">Plan 2000</a></li><li data-l="Pedagogía (Grado 2009)"><a href="https://educacion.ucm.es/pedagogia-grado-2009-2022" target="_top" rel="noopener" aria-label="Pedagogía (Grado 2009)">Grado 2009</a></li></ul></section>
+    <section class="card"><h2><span class="ico"><svg class="ic"><use href="#i-brain"/></svg></span>Psicopedagogía</h2><ul class="plans"><li data-l="Psicopedagogía (Plan 95)"><a href="https://educacion.ucm.es/psicopedagogia-plan-95-2022" target="_top" rel="noopener" aria-label="Psicopedagogía (Plan 95)">Plan 95</a></li><li data-l="Psicopedagogía (Plan 2001)"><a href="https://educacion.ucm.es/psicopedagogia-plan-2001-2022" target="_top" rel="noopener" aria-label="Psicopedagogía (Plan 2001)">Plan 2001</a></li></ul></section>
+    <section class="card"><h2><span class="ico"><svg class="ic"><use href="#i-users"/></svg></span>Educación Social</h2><ul class="plans"><li data-l="Educación social (Plan 92)"><a href="https://educacion.ucm.es/educacion-social-plan-92-2022" target="_top" rel="noopener" aria-label="Educación social (Plan 92)">Plan 92</a></li><li data-l="Educación social (Plan 96)"><a href="https://educacion.ucm.es/educacion-social-plan-96-2022" target="_top" rel="noopener" aria-label="Educación social (Plan 96)">Plan 96</a></li><li data-l="Educación social (Plan 2000)"><a href="https://educacion.ucm.es/educacion-social-plan-2000-2022" target="_top" rel="noopener" aria-label="Educación social (Plan 2000)">Plan 2000</a></li><li data-l="Educación social (Grado 2009)"><a href="https://educacion.ucm.es/educacion-social-grado-2009-2022" target="_top" rel="noopener" aria-label="Educación social (Grado 2009)">Grado 2009</a></li></ul></section>
+    <section class="card"><h2><span class="ico"><svg class="ic"><use href="#i-music"/></svg></span>Magisterio en Educación Musical</h2><ul class="plans"><li data-l="Magisterio en Educación Musical (Plan 92)"><a href="https://educacion.ucm.es/magisterio-en-educacion-musical-plan-92-2022" target="_top" rel="noopener" aria-label="Magisterio en Educación Musical (Plan 92)">Plan 92</a></li><li data-l="Magisterio en Educación Musical (Plan 96)"><a href="https://educacion.ucm.es/magisterio-en-educacion-musical-plan-96-2022" target="_top" rel="noopener" aria-label="Magisterio en Educación Musical (Plan 96)">Plan 96</a></li><li data-l="Magisterio en Educación Musical (Plan 2003)"><a href="https://educacion.ucm.es/magisterio-en-educacion-musical-plan-2003-2022" target="_top" rel="noopener" aria-label="Magisterio en Educación Musical (Plan 2003)">Plan 2003</a></li></ul></section>
+    <section class="card"><h2><span class="ico"><svg class="ic"><use href="#i-chat"/></svg></span>Magisterio en Audición y Lenguaje</h2><ul class="plans"><li data-l="Magisterio en Audición y Lenguaje (Plan 94)"><a href="https://educacion.ucm.es/magisterio-en-audicion-y-lenguaje-plan-94-2022" target="_top" rel="noopener" aria-label="Magisterio en Audición y Lenguaje (Plan 94)">Plan 94</a></li><li data-l="Magisterio en Audición y Lenguaje (Plan 2003)"><a href="https://educacion.ucm.es/magisterio-en-audicion-en-lenguaje-plan-2003-2022" target="_top" rel="noopener" aria-label="Magisterio en Audición y Lenguaje (Plan 2003)">Plan 2003</a></li></ul></section>
+    <section class="card"><h2><span class="ico"><svg class="ic"><use href="#i-globe"/></svg></span>Magisterio en Lengua Extranjera</h2><ul class="plans"><li data-l="Magisterio en Lengua Extranjera (Plan 96)"><a href="https://educacion.ucm.es/magisterio-en-lengua-extranjera-plan-96" target="_top" rel="noopener" aria-label="Magisterio en Lengua Extranjera (Plan 96)">Plan 96</a></li><li data-l="Magisterio en Lengua Extranjera (Plan 2003)"><a href="https://educacion.ucm.es/magisterio-en-lengua-extranjera-plan-2003" target="_top" rel="noopener" aria-label="Magisterio en Lengua Extranjera (Plan 2003)">Plan 2003</a></li></ul></section>
+    <section class="card"><h2><span class="ico"><svg class="ic"><use href="#i-smile"/></svg></span>Magisterio en Educación Infantil</h2><ul class="plans"><li data-l="Magisterio en Educación Infantil (Plan 92)"><a href="https://educacion.ucm.es/magisterio-en-educacion-infantil-plan-92-2022" target="_top" rel="noopener" aria-label="Magisterio en Educación Infantil (Plan 92)">Plan 92</a></li><li data-l="Magisterio en Educación Infantil (Plan 96)"><a href="https://educacion.ucm.es/magisterio-en-educacion-infantil-plan-96-2022" target="_top" rel="noopener" aria-label="Magisterio en Educación Infantil (Plan 96)">Plan 96</a></li><li data-l="Magisterio en Educación Infantil (Plan 2003)"><a href="https://educacion.ucm.es/magisterio-en-educacion-infantilplan-2003-2022" target="_top" rel="noopener" aria-label="Magisterio en Educación Infantil (Plan 2003)">Plan 2003</a></li><li data-l="Maestro en Educación Infantil (Grado 2009)"><a href="https://educacion.ucm.es/maestro-en-educacion-infantil-grado-2009-2022" target="_top" rel="noopener" aria-label="Maestro en Educación Infantil (Grado 2009)">Grado 2009</a></li></ul></section>
+    <section class="card"><h2><span class="ico"><svg class="ic"><use href="#i-pencil"/></svg></span>Magisterio en Educación Primaria</h2><ul class="plans"><li data-l="Magisterio en Educación Primaria (Plan 92)"><a href="https://educacion.ucm.es/magisterio-en-educacion-primaria-plan-92-2022" target="_top" rel="noopener" aria-label="Magisterio en Educación Primaria (Plan 92)">Plan 92</a></li><li data-l="Magisterio en Educación Primaria (Plan 96)"><a href="https://educacion.ucm.es/magisterio-en-educacion-primaria-plan-96-2022" target="_top" rel="noopener" aria-label="Magisterio en Educación Primaria (Plan 96)">Plan 96</a></li><li data-l="Magisterio en Educación Primaria (Plan 2003)"><a href="https://educacion.ucm.es/magisterio-en-educacion-primaria-plan-2003-2022" target="_top" rel="noopener" aria-label="Magisterio en Educación Primaria (Plan 2003)">Plan 2003</a></li><li data-l="Maestro en Educación Primaria (Grado 2009)"><a href="https://educacion.ucm.es/maestro-en-educacion-primaria-grado-2009-2022" target="_top" rel="noopener" aria-label="Maestro en Educación Primaria (Grado 2009)">Grado 2009</a></li></ul></section>
+    <section class="card"><h2><span class="ico"><svg class="ic"><use href="#i-run"/></svg></span>Magisterio en Educación Física</h2><ul class="plans"><li data-l="Magisterio en Educación Física (Plan 92)"><a href="https://educacion.ucm.es/magisterio-en-educacion-fisica-plan-92-2022" target="_top" rel="noopener" aria-label="Magisterio en Educación Física (Plan 92)">Plan 92</a></li><li data-l="Magisterio en Educación Física (Plan 96)"><a href="https://educacion.ucm.es/magisterio-en-educacion-fisica-plan-96-2022" target="_top" rel="noopener" aria-label="Magisterio en Educación Física (Plan 96)">Plan 96</a></li><li data-l="Magisterio en Educación Física (Plan 2003)"><a href="https://educacion.ucm.es/magisterio-en-educacion-fisica-plan-2003-2022" target="_top" rel="noopener" aria-label="Magisterio en Educación Física (Plan 2003)">Plan 2003</a></li></ul></section>
+    <section class="card"><h2><span class="ico"><svg class="ic"><use href="#i-heart"/></svg></span>Magisterio en Educación Especial</h2><ul class="plans"><li data-l="Magisterio en Educación Especial (Plan 94)"><a href="https://educacion.ucm.es/magisterio-en-educacion-especial-plan-94-2022" target="_top" rel="noopener" aria-label="Magisterio en Educación Especial (Plan 94)">Plan 94</a></li><li data-l="Magisterio en Educación Especial (Plan 2003)"><a href="https://educacion.ucm.es/magisterio-en-educacion-especial-plan-2003-2022" target="_top" rel="noopener" aria-label="Magisterio en Educación Especial (Plan 2003)">Plan 2003</a></li></ul></section>
+    
+  </main>
+  <p class="empty" id="empty">No hay titulaciones que coincidan con tu búsqueda.</p>
+</div>
+<script>(function(){
+var q=document.getElementById('q'),empty=document.getElementById('empty');
+var norm=function(t){return t.toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g,'')};
+function run(){
+  var v=norm(q.value.trim()),any=false;
+  document.querySelectorAll('.card').forEach(function(c){
+    var title=norm(c.querySelector('h2').textContent),hit=0;
+    c.querySelectorAll('.plans li').forEach(function(li){
+      var ok=!v||title.indexOf(v)>-1||norm(li.getAttribute('data-l')).indexOf(v)>-1;
+      li.hidden=!ok;if(ok)hit++;
+    });
+    c.hidden=!hit;if(hit)any=true;
+  });
+  empty.style.display=any?'none':'block';
+}
+q.addEventListener('input',run);
+})();</script>
+</body>
+</html>
