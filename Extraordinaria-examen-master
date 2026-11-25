@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Convocatoria Extraordinaria Fin de Estudios Máster</title>
+<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%238f1d2c'/%3E%3Crect x='14' y='18' width='36' height='32' rx='4' fill='none' stroke='%23fff' stroke-width='4'/%3E%3Cpath d='M14 28h36M24 12v10M40 12v10' stroke='%23fff' stroke-width='4' stroke-linecap='round'/%3E%3Ccircle cx='32' cy='39' r='4' fill='%23fff'/%3E%3C/svg%3E">
+<style>
+  /* Solo para la vista previa: simula el título que ya pone la web */
+  body { margin: 0; background: #fff; font-family: "Source Sans 3", "Source Sans Pro", system-ui, -apple-system, "Segoe UI", Roboto, Arial, sans-serif; }
+  .vista-previa-titulo { max-width: 960px; margin: 24px auto 0; padding: 0 16px; font-weight: 400; font-size: 32px; color: #333; }
+</style>
+</head>
+<body>
+
+<!-- ===== INICIO DEL BLOQUE PARA LA WEB (copiar desde aquí) ===== -->
+<div class="em-pagina">
+<style>
+  .em-pagina {
+    --em-rojo: #8f1d2c;
+    --em-rojo-osc: #6e1522;
+    --em-rojo-suave: #f9e9ec;
+    --em-tinta: #1f2a37;
+    --em-gris: #5b6472;
+    --em-fondo: #f4f4f5;
+    --em-borde: #e4e4e7;
+    font-family: inherit;
+    color: var(--em-tinta);
+    line-height: 1.5;
+    font-size: 14px;
+    max-width: 960px;
+    margin: 0 auto;
+    padding: 20px 16px 32px;
+    box-sizing: border-box;
+  }
+  .em-pagina *, .em-pagina *::before, .em-pagina *::after { box-sizing: border-box; }
+  .em-pagina svg { flex-shrink: 0; }
+  .em-pagina a { color: var(--em-rojo); }
+
+  .em-rejilla { display: grid; grid-template-columns: 3fr 2fr; gap: 14px; align-items: start; }
+  .em-columna { display: grid; gap: 14px; }
+
+  .em-tarjeta {
+    background: #fff;
+    border: 1px solid var(--em-borde);
+    border-radius: 12px;
+    padding: 18px 20px;
+    box-shadow: 0 1px 3px rgba(0,0,0,.04);
+  }
+  .em-tarjeta-cab { display: flex; align-items: center; gap: 12px; margin-bottom: 14px; }
+  .em-tarjeta-cab h3 { margin: 0; font-size: 17px; font-weight: 600; color: var(--em-tinta); }
+  .em-icono {
+    width: 32px; height: 32px; border-radius: 8px;
+    background: var(--em-rojo-suave); color: var(--em-rojo);
+    display: inline-flex; align-items: center; justify-content: center; flex-shrink: 0;
+  }
+
+  /* Pasos */
+  .em-pasos { list-style: none; margin: 0; padding: 0; display: grid; gap: 16px; }
+  .em-paso { display: flex; gap: 12px; align-items: flex-start; }
+  .em-num {
+    width: 26px; height: 26px; border-radius: 50%;
+    background: var(--em-rojo); color: #fff;
+    font-size: 13px; font-weight: 700;
+    display: inline-flex; align-items: center; justify-content: center; flex-shrink: 0;
+  }
+  .em-paso h4 { margin: 2px 0 2px; font-size: 15px; font-weight: 600; color: var(--em-tinta); }
+  .em-paso p { margin: 0 0 6px; font-size: 13.5px; color: var(--em-gris); }
+
+  .em-boton {
+    display: inline-flex; align-items: center; gap: 8px;
+    margin-top: 6px; padding: 8px 16px;
+    border-radius: 999px;
+    font-size: 13.5px; font-weight: 600; text-decoration: none;
+    background: var(--em-rojo); color: #fff !important; border: 1px solid var(--em-rojo);
+    transition: background .15s ease;
+  }
+  .em-boton:hover, .em-boton:focus { background: var(--em-rojo-osc); border-color: var(--em-rojo-osc); }
+  .em-boton-sec { background: #fff; color: var(--em-rojo) !important; }
+  .em-boton-sec:hover, .em-boton-sec:focus { background: var(--em-rojo-suave); }
+
+  /* Lista con iconos (columna derecha) */
+  .em-items { list-style: none; margin: 0; padding: 0; display: grid; gap: 14px; }
+  .em-item { display: flex; gap: 12px; align-items: flex-start; }
+  .em-item strong { display: block; font-size: 14.5px; font-weight: 600; color: var(--em-tinta); }
+  .em-item span.em-sub { display: block; font-size: 13px; color: var(--em-gris); }
+
+  /* Filas tipo tabla */
+  .em-filas { margin: 0; padding: 0; list-style: none; }
+  .em-filas li {
+    display: flex; justify-content: space-between; align-items: baseline; gap: 12px;
+    padding: 9px 0; border-bottom: 1px solid var(--em-borde); font-size: 13.5px;
+  }
+  .em-filas li:first-child { padding-top: 0; }
+  .em-filas li:last-child { border-bottom: 0; }
+  .em-filas b { font-size: 16px; font-weight: 700; color: var(--em-tinta); text-align: right; }
+
+  /* Aviso inferior */
+  .em-aviso {
+    margin-top: 14px;
+    display: flex; gap: 10px; align-items: flex-start;
+    background: var(--em-fondo);
+    border-radius: 10px;
+    padding: 10px 14px;
+    font-size: 13px; color: var(--em-gris);
+  }
+  .em-aviso svg { margin-top: 1px; color: var(--em-gris); }
+  .em-aviso p { margin: 0; }
+
+  @media (max-width: 760px) {
+    .em-rejilla { grid-template-columns: 1fr; }
+  }
+</style>
+
+  <div class="em-rejilla">
+
+    <!-- Solicitud -->
+    <section class="em-tarjeta">
+      <div class="em-tarjeta-cab">
+        <span class="em-icono" aria-hidden="true"><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 3H7a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V8z"/><path d="M14 3v5h5"/><path d="M9 13h6M9 17h6"/></svg></span>
+        <h3>Solicitud</h3>
+      </div>
+      <ol class="em-pasos">
+        <li class="em-paso">
+          <span class="em-num">1</span>
+          <div>
+            <h4>Descarga y rellena el impreso de solicitud</h4>
+            <p>Solicitud de Convocatoria Extraordinaria de Febrero para másteres.</p>
+            <a class="em-boton" href="https://educacion.ucm.es/file/24-2018-06-27-extraordinaria-master" target="_blank" rel="noopener">
+              <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3v12"/><path d="m7 10 5 5 5-5"/><path d="M5 21h14"/></svg>
+              Descargar impreso
+            </a>
+          </div>
+        </li>
+        <li class="em-paso">
+          <span class="em-num">2</span>
+          <div>
+            <h4>Envíalo a través del formulario-contacto</h4>
+            <p>Adjunta el impreso cumplimentado dentro del plazo.</p>
+            <a class="em-boton em-boton-sec" href="https://educacion.ucm.es/formulario-contacto" target="_blank" rel="noopener">
+              <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 6 9-6"/></svg>
+              Escribir a secretariaedu@ucm.es
+            </a>
+          </div>
+        </li>
+      </ol>
+    </section>
+
+    <!-- Columna derecha -->
+    <div class="em-columna">
+      <section class="em-tarjeta">
+        <div class="em-tarjeta-cab">
+          <span class="em-icono" aria-hidden="true"><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4.5" width="18" height="16" rx="2.5"/><path d="M3 9.5h18M8 2.5v4M16 2.5v4"/></svg></span>
+          <h3>Plazo de solicitud</h3>
+        </div>
+        <ul class="em-filas">
+          <li><span>Desde</span><b>15 de noviembre</b></li>
+          <li><span>Hasta</span><b>30 de noviembre</b></li>
+        </ul>
+      </section>
+
+    </div>
+
+  </div>
+
+  <div class="em-aviso">
+    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><path d="M12 16v-4M12 8h.01"/></svg>
+    <p>La solicitud se envía a través del <a href="https://educacion.ucm.es/formulario-contacto" target="_blank" rel="noopener">formulario-contacto</a>, del 15 al 30 de noviembre.</p>
+  </div>
+
+</div>
+<!-- ===== FIN DEL BLOQUE PARA LA WEB (copiar hasta aquí) ===== -->
+
+</body>
+</html>
