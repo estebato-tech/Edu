@@ -1,97 +1,207 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-<meta charset="utf-8">
+<meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Certificado de Aptitud Pedagógica (CAP) · Facultad de Educación UCM</title>
+<title>Certificado de Aptitud Pedagógica</title>
+<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='7' fill='%238a1b2c'/%3E%3Cpath d='M10 7h8l5 5v13a1 1 0 0 1-1 1H10a1 1 0 0 1-1-1V8a1 1 0 0 1 1-1z' fill='none' stroke='%23fff' stroke-width='2' stroke-linejoin='round'/%3E%3Cpath d='M18 7v5h5M12.5 17h7M12.5 21h5' stroke='%23fff' stroke-width='2' stroke-linecap='round'/%3E%3C/svg%3E">
 <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,600;12..96,700&family=Source+Sans+3:wght@400;500;600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Quattrocento+Sans:wght@400;700&family=Source+Sans+3:wght@400;600;700&display=swap" rel="stylesheet">
 <style>
-:root{--bg:#fff;--soft:#f5f6f8;--surface:#fff;--ink:#1b1e27;--muted:#5b6170;--line:#e2e5ea;--brand:#8a1c2e;--brand-soft:#f6e6e9;--radius:14px;color-scheme:light}
-*{box-sizing:border-box;margin:0}
-html{background:#fff}
-body{font-family:"Source Sans 3",system-ui,sans-serif;background:var(--bg);color:var(--ink);line-height:1.45;font-size:.79rem}
-a{color:var(--brand);text-underline-offset:3px}
-a:focus-visible{outline:3px solid var(--brand);outline-offset:3px;border-radius:9px}
-h1,h2{font-family:"Bricolage Grotesque",system-ui,sans-serif;line-height:1.15;letter-spacing:-.02em}
-.sr{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
-.wrap{max-width:1080px;margin:0 auto;padding:.94rem}
-.ic{width:1.25em;height:1.25em;fill:none;stroke:currentColor;stroke-width:2;stroke-linecap:round;stroke-linejoin:round;flex:none;vertical-align:-.2em}
-main{display:grid;gap:.75rem;grid-template-columns:repeat(12,1fr)}
-.col{display:grid;gap:.75rem;align-content:start;grid-column:span 12}
-.card{background:var(--surface);border:1px solid var(--line);border-radius:var(--radius);padding:.85rem .95rem;grid-column:span 12;box-shadow:0 1px 2px rgba(20,24,40,.06),0 10px 24px -16px rgba(20,24,40,.35)}
-@media(min-width:640px){.c-sol{grid-column:span 7}.col{grid-column:span 5}}
-.card h2{display:flex;align-items:center;gap:.6rem;font-size:1.05rem;margin-bottom:.65rem}
-.ico{display:grid;place-items:center;width:1.95rem;height:1.95rem;border-radius:9px;background:var(--brand-soft);color:var(--brand);flex:none}
-.ico .ic{width:1.05rem;height:1.05rem}
-.sub{color:var(--muted);font-size:.82rem;margin:-.35rem 0 .6rem}
-/* Pasos */
-.steps{list-style:none;padding:0;display:grid;gap:.8rem;counter-reset:s}
-.steps>li{display:grid;grid-template-columns:1.7rem 1fr;gap:.65rem;counter-increment:s}
-.steps>li::before{content:counter(s);display:grid;place-items:center;width:1.7rem;height:1.7rem;border-radius:50%;background:var(--brand);color:#fff;font-weight:700;font-size:.82rem}
-.steps b{display:block;font-weight:600;font-size:.9rem}
-.steps p{color:var(--muted)}
-.steps p+p{margin-top:.25rem}
-.acts{display:flex;flex-wrap:wrap;gap:.45rem;margin-top:.5rem}
-.btn{display:inline-flex;align-items:center;gap:.45rem;padding:.4rem .85rem;border-radius:999px;font-weight:600;text-decoration:none;border:1.5px solid var(--brand);color:var(--brand);transition:background .15s,color .15s}
-.btn:hover{background:var(--brand-soft)}
-.btn.solid{background:var(--brand);color:#fff}
-.btn.solid:hover{background:#6f1424;border-color:#6f1424}
-.chips{display:flex;flex-wrap:wrap;gap:.3rem;margin-top:.4rem}
-.chips span{background:var(--soft);border-radius:999px;padding:.15rem .6rem;font-size:.82rem;color:var(--muted)}
-/* Retirada */
-.opts{list-style:none;padding:0;display:grid;gap:.5rem}
-.opts li{display:grid;grid-template-columns:1.95rem 1fr;gap:.65rem;align-items:start}
-.opts b{display:block;font-weight:600;font-size:.9rem}
-.opts p{color:var(--muted)}
-/* Gastos */
-.tar{list-style:none;padding:0;display:grid}
-.tar li{display:flex;justify-content:space-between;gap:1rem;padding:.4rem 0;border-top:1px solid var(--line)}
-.tar li:first-child{border-top:0}
-.tar b{font-family:"Bricolage Grotesque",system-ui,sans-serif;font-size:1rem;white-space:nowrap}
-.foot{margin-top:.6rem;color:var(--muted);font-size:.82rem}
-.note{grid-column:span 12;display:flex;gap:.6rem;align-items:flex-start;background:var(--soft);border-radius:11px;padding:.55rem .8rem;color:var(--muted);font-size:.82rem;line-height:1.35}
-
-.imp{grid-column:span 12;display:flex;flex-wrap:wrap;align-items:center;gap:.5rem .9rem}
-.imp h2{margin:0;font-size:1.05rem}
-.imp .acts{margin:0}
-.c-a{grid-column:span 12}
-.c-b{grid-column:span 12}
-.sub{display:block;font-size:.84rem;font-weight:600;margin-top:.6rem}.c-b p{color:var(--muted)}.c-b .list{font-size:.76rem}.tx{color:var(--muted);margin-top:.35rem}.sub.first{margin-top:.5rem}.c-b p{color:var(--muted)}@media(min-width:640px){.c-a,.c-b{grid-column:span 12}.cols{display:grid;grid-template-columns:1fr 1.9fr;gap:0 1.6rem}.list.ms{display:block;columns:2;column-gap:1.4rem}.ms li{break-inside:avoid;margin-bottom:.25rem}}
-.card h2 small{display:block;font:500 .8rem "Source Sans 3",sans-serif;letter-spacing:0;color:var(--muted);margin-top:.1rem}
-.card h2 div{line-height:1.15}
-.list{list-style:none;padding:0;margin-top:.35rem;display:grid;gap:.25rem}
-.list li{position:relative;padding-left:1.15rem;color:var(--muted)}
-.list li::before{content:"";position:absolute;left:.1rem;top:.5em;width:.4rem;height:.4rem;border-radius:50%;background:var(--brand)}
-.steps b+p,.steps b+.list{margin-top:.15rem}
-.pay{margin-top:.7rem;padding-top:.6rem;border-top:1px solid var(--line);display:flex;gap:.6rem;align-items:flex-start;color:var(--muted)}
-.pay .ic{color:var(--brand);margin-top:.15rem}
+  .cap-wrap{
+    --cap-granate:#8a1b2c;
+    --cap-granate-hover:#6f1523;
+    --cap-granate-suave:#f8e9ec;
+    --cap-texto:#1f2328;
+    --cap-texto-2:#4b5563;
+    --cap-borde:#e3e5e8;
+    --cap-gris:#f3f4f6;
+    font-family:"Source Sans 3",system-ui,-apple-system,"Segoe UI",Roboto,Arial,sans-serif;
+    color:var(--cap-texto);
+    max-width:760px;
+    margin:0 auto;
+    padding:24px 16px;
+    line-height:1.45;
+  }
+  .cap-wrap *{box-sizing:border-box}
+  .cap-titulo{
+    font-family:"Quattrocento Sans","Source Sans 3",sans-serif;
+    font-weight:400;
+    font-size:clamp(1.8rem,4.5vw,2.4rem);
+    color:#3a3a3a;
+    margin:0 0 28px;
+  }
+  .cap-card{
+    background:#fff;
+    border:1px solid var(--cap-borde);
+    border-radius:12px;
+    box-shadow:0 2px 8px rgba(0,0,0,.06);
+    padding:18px 20px 20px;
+    margin-bottom:16px;
+  }
+  .cap-card-head{display:flex;align-items:center;gap:12px;margin-bottom:14px}
+  .cap-card-icon{
+    flex:0 0 auto;width:30px;height:30px;border-radius:7px;
+    background:var(--cap-granate-suave);color:var(--cap-granate);
+    display:flex;align-items:center;justify-content:center;
+  }
+  .cap-card-icon svg{width:16px;height:16px}
+  .cap-card-title{margin:0;font-size:1.1rem;font-weight:700}
+  .cap-card-sub{margin:2px 0 0;font-size:.8rem;color:var(--cap-texto-2)}
+  .cap-badge{
+    display:inline-block;margin-left:6px;padding:1px 8px;border-radius:999px;
+    background:var(--cap-granate-suave);color:var(--cap-granate);
+    font-size:.7rem;font-weight:700;vertical-align:middle;
+  }
+  .cap-steps{list-style:none;margin:0;padding:0}
+  .cap-step{display:flex;gap:14px;padding:6px 0 10px}
+  .cap-num{
+    flex:0 0 auto;width:24px;height:24px;border-radius:50%;
+    background:var(--cap-granate);color:#fff;font-size:.75rem;font-weight:700;
+    display:flex;align-items:center;justify-content:center;margin-top:1px;
+  }
+  .cap-step h3{margin:0 0 3px;font-size:.95rem;font-weight:700}
+  .cap-step p{margin:0 0 6px;font-size:.82rem;color:var(--cap-texto-2)}
+  .cap-btn{
+    display:inline-flex;align-items:center;gap:8px;
+    padding:7px 16px;border-radius:999px;font-size:.8rem;font-weight:600;
+    text-decoration:none;margin-top:6px;transition:background .15s,color .15s;
+  }
+  .cap-btn svg{width:14px;height:14px;flex:0 0 auto}
+  .cap-btn-outline{border:1px solid var(--cap-granate);color:var(--cap-granate);background:#fff}
+  .cap-btn-outline:hover{background:var(--cap-granate-suave)}
+  .cap-btn-solid{background:var(--cap-granate);color:#fff;border:1px solid var(--cap-granate)}
+  .cap-btn-solid:hover{background:var(--cap-granate-hover)}
+  .cap-btn:focus-visible{outline:2px solid var(--cap-granate);outline-offset:2px}
+  .cap-ruta{
+    display:flex;flex-wrap:wrap;align-items:center;gap:6px;
+    margin:6px 0 4px;padding:0;list-style:none;
+  }
+  .cap-ruta li{
+    display:inline-flex;align-items:center;gap:6px;
+    font-size:.78rem;font-weight:600;color:var(--cap-granate);
+  }
+  .cap-ruta .cap-chip{
+    background:var(--cap-granate-suave);border-radius:6px;padding:3px 9px;
+  }
+  .cap-ruta svg{width:12px;height:12px;color:#9aa0a6}
+  .cap-note{
+    display:flex;align-items:flex-start;gap:10px;
+    background:var(--cap-gris);border-radius:10px;padding:10px 14px;
+    font-size:.8rem;color:var(--cap-texto-2);margin-bottom:16px;
+  }
+  .cap-note svg{width:15px;height:15px;flex:0 0 auto;margin-top:1px}
 </style>
 </head>
-<body>
-<svg width="0" height="0" style="position:absolute" aria-hidden="true"><symbol id="i-file" viewBox="0 0 24 24"><path d="M14 3H7a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V8z"/><path d="M14 3v5h5M9 13h6M9 17h6"/></symbol><symbol id="i-search" viewBox="0 0 24 24"><circle cx="11" cy="11" r="7"/><path d="m20 20-4-4"/></symbol><symbol id="i-wrench" viewBox="0 0 24 24"><path d="M14.7 6.3a4 4 0 0 0-5.4 5.4L3 18l3 3 6.3-6.3a4 4 0 0 0 5.4-5.4l-2.4 2.4-2.6-.6-.6-2.6z"/></symbol><symbol id="i-download" viewBox="0 0 24 24"><path d="M12 4v11m0 0-4-4m4 4 4-4M5 20h14"/></symbol><symbol id="i-mail" viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 6 9-6"/></symbol><symbol id="i-euro" viewBox="0 0 24 24"><path d="M18 6a7 7 0 1 0 0 12M4 10h9M4 14h9"/></symbol><symbol id="i-cap" viewBox="0 0 24 24"><path d="m2 9 10-5 10 5-10 5z"/><path d="M6 11v5c0 1.5 3 3 6 3s6-1.5 6-3v-5"/></symbol><symbol id="i-ext" viewBox="0 0 24 24"><path d="M14 4h6v6M20 4l-9 9M18 14v5a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1V7a1 1 0 0 1 1-1h5"/></symbol><symbol id="i-laptop" viewBox="0 0 24 24"><rect x="4" y="5" width="16" height="11" rx="1.5"/><path d="M2 20h20"/></symbol><symbol id="i-info" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 11v5M12 8h.01"/></symbol></svg>
-<h1 class="sr">Certificado de Aptitud Pedagógica (CAP) · Facultad de Educación UCM</h1>
-<div class="wrap">
-  <main>
-    <section class="card c-a">
-      <h2><span class="ico"><svg class="ic"><use href="#i-file"/></svg></span><div>Solicitud del CAP<small>Certificado de Aptitud Pedagógica</small></div></h2>
-      <ol class="steps st4">
-        <li><div><b>Solicita</b>
+<body style="margin:0;background:#fff">
+
+<div class="cap-wrap">
+  <h1 class="cap-titulo">Certificado de Aptitud Pedagógica</h1>
+
+  <!-- ===== TARJETA 1: SOLICITUD DEL CAP ===== -->
+  <section class="cap-card" aria-labelledby="cap-sol">
+    <div class="cap-card-head">
+      <span class="cap-card-icon" aria-hidden="true">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6M8 13h8M8 17h6"/></svg>
+      </span>
+      <div>
+        <h2 class="cap-card-title" id="cap-sol">Solicitud del CAP</h2>
+        <p class="cap-card-sub">Certificado de Aptitud Pedagógica</p>
+      </div>
+    </div>
+
+    <ol class="cap-steps">
+      <li class="cap-step">
+        <span class="cap-num">1</span>
+        <div>
+          <h3>Solicita</h3>
           <p>Envía un correo adjuntando el DNI escaneado por ambas caras.</p>
-          <div class="acts"><a class="btn" href="mailto:secretariaedu@ucm.es"><svg class="ic"><use href="#i-mail"/></svg>Escribir a secretariaedu@ucm.es</a></div></div></li>
-        <li><div><b>Familia numerosa</b>
-          <p>Solo si te corresponde el descuento: adjunta el documento acreditativo en vigor.</p></div></li>
-        <li><div><b>Recibo y pago</b>
+          <a class="cap-btn cap-btn-outline" href="mailto:secretariaedu@ucm.es?subject=Solicitud%20del%20CAP">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 6-10 7L2 6"/></svg>
+            Escribir a secretariaedu@ucm.es
+          </a>
+        </div>
+      </li>
+      <li class="cap-step">
+        <span class="cap-num">2</span>
+        <div>
+          <h3>Familia numerosa</h3>
+          <p>Solo si te corresponde el descuento: adjunta el documento acreditativo en vigor.</p>
+        </div>
+      </li>
+      <li class="cap-step">
+        <span class="cap-num">3</span>
+        <div>
+          <h3>Recibo y pago</h3>
           <p>Tras comprobar tus datos, la Secretaría te envía un recibo bancario para pagar en una sucursal del Banco de Santander.</p>
           <p>También puedes pagar en línea.</p>
-          <div class="acts"><a class="btn solid" href="https://geanet.ucm.es/ac_app/f?p=400400:1001:107268020795535" target="_top" rel="noopener"><svg class="ic"><use href="#i-euro"/></svg>Pagar en línea</a></div></div></li>
-        <li><div><b>Confirmación</b>
-          <p>Tras el pago, en aproximadamente un mes recibirás un correo que notifica la recepción del certificado.</p></div></li>
-      </ol>
-    </section>
-    <p class="note"><svg class="ic"><use href="#i-info"/></svg><span>El CAP no se expide en versión digital.</span></p>
-  </main>
+          <a class="cap-btn cap-btn-solid" href="https://geanet.ucm.es/ac_app/f?p=400400" target="_blank" rel="noopener">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M18 7a7 7 0 1 0 0 10M4 10h10M4 14h10"/></svg>
+            Pagar en línea
+          </a>
+        </div>
+      </li>
+      <li class="cap-step">
+        <span class="cap-num">4</span>
+        <div>
+          <h3>Confirmación</h3>
+          <p>Tras el pago, en aproximadamente un mes recibirás un correo que notifica la recepción del certificado.</p>
+        </div>
+      </li>
+    </ol>
+  </section>
+
+  <div class="cap-note" role="note">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><path d="M12 16v-4M12 8h.01"/></svg>
+    <span>El CAP no se expide en versión digital.</span>
+  </div>
+
+  <!-- ===== TARJETA 2: COPIA ELECTRÓNICA AUTÉNTICA ===== -->
+  <section class="cap-card" aria-labelledby="cap-copia">
+    <div class="cap-card-head">
+      <span class="cap-card-icon" aria-hidden="true">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><path d="m9 12 2 2 4-4"/></svg>
+      </span>
+      <div>
+        <h2 class="cap-card-title" id="cap-copia">¿Ya tienes el CAP? <span class="cap-badge">Copia digital</span></h2>
+        <p class="cap-card-sub">Copia electrónica auténtica · documento verificable</p>
+      </div>
+    </div>
+
+    <ol class="cap-steps">
+      <li class="cap-step">
+        <span class="cap-num">1</span>
+        <div>
+          <h3>Qué es</h3>
+          <p>Si ya estás en posesión del certificado en papel, puedes solicitar una copia electrónica auténtica: un documento digital con la misma validez que el original, verificable en la Sede Electrónica mediante su código seguro de verificación (CSV).</p>
+        </div>
+      </li>
+      <li class="cap-step">
+        <span class="cap-num">2</span>
+        <div>
+          <h3>Ruta en la Sede Electrónica</h3>
+          <ul class="cap-ruta" aria-label="Ruta en sede.ucm.es">
+            <li><span class="cap-chip">sede.ucm.es</span></li>
+            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m9 18 6-6-6-6"/></svg><span class="cap-chip">Procedimientos Generales</span></li>
+            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m9 18 6-6-6-6"/></svg><span class="cap-chip">Copia Electrónica Auténtica</span></li>
+            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m9 18 6-6-6-6"/></svg><span class="cap-chip">Alta de solicitud</span></li>
+          </ul>
+          <a class="cap-btn cap-btn-solid" href="https://sede.ucm.es/" target="_blank" rel="noopener">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M15 3h6v6M10 14 21 3M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/></svg>
+            Ir a la Sede Electrónica
+          </a>
+        </div>
+      </li>
+      <li class="cap-step">
+        <span class="cap-num">3</span>
+        <div>
+          <h3>Adjunta el certificado</h3>
+          <p>Sube el CAP escaneado en PDF por ambas caras (anverso y reverso). Solo se admite un documento por solicitud.</p>
+        </div>
+      </li>
+    </ol>
+  </section>
 </div>
+
 </body>
 </html>
