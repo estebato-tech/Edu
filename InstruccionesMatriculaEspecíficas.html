@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Instrucciones de Matrícula específicas Facultad de Educación</title>
+<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='7' fill='%238a1b2c'/%3E%3Cpath d='M10 7h8l5 5v13a1 1 0 0 1-1 1H10a1 1 0 0 1-1-1V8a1 1 0 0 1 1-1z' fill='none' stroke='%23fff' stroke-width='2' stroke-linejoin='round'/%3E%3Cpath d='M18 7v5h5M12.5 17h7M12.5 21h5' stroke='%23fff' stroke-width='2' stroke-linecap='round'/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Quattrocento+Sans:wght@400;700&family=Source+Sans+3:wght@400;600;700&display=swap" rel="stylesheet">
+<style>
+  .cap-wrap{
+    --cap-granate:#8a1b2c;
+    --cap-granate-hover:#6f1523;
+    --cap-granate-suave:#f8e9ec;
+    --cap-texto:#1f2328;
+    --cap-texto-2:#4b5563;
+    --cap-borde:#e3e5e8;
+    --cap-gris:#f3f4f6;
+    font-family:"Source Sans 3",system-ui,-apple-system,"Segoe UI",Roboto,Arial,sans-serif;
+    color:var(--cap-texto);
+    max-width:1120px;
+    margin:0 auto;
+    padding:24px 16px;
+    line-height:1.45;
+  }
+  .cap-wrap *{box-sizing:border-box}
+  .cap-grid{display:grid;grid-template-columns:1fr 1fr;gap:20px;align-items:start}
+  .cap-col{min-width:0}
+  .cap-col .cap-card{margin-bottom:12px}
+  @media (max-width:820px){.cap-grid{grid-template-columns:1fr}}
+  .cap-card{
+    background:#fff;
+    border:1px solid var(--cap-borde);
+    border-radius:12px;
+    box-shadow:0 2px 8px rgba(0,0,0,.06);
+    padding:18px 20px 20px;
+    margin-bottom:16px;
+  }
+  .cap-card-head{display:flex;align-items:center;gap:12px;margin-bottom:14px}
+  .cap-card-icon{
+    flex:0 0 auto;width:30px;height:30px;border-radius:7px;
+    background:var(--cap-granate-suave);color:var(--cap-granate);
+    display:flex;align-items:center;justify-content:center;
+  }
+  .cap-card-icon svg{width:16px;height:16px}
+  .cap-card-title{margin:0;font-size:1.1rem;font-weight:700}
+  .cap-card-sub{margin:2px 0 0;font-size:.8rem;color:var(--cap-texto-2)}
+  .cap-badge{
+    display:inline-block;margin-left:6px;padding:1px 8px;border-radius:999px;
+    background:var(--cap-granate-suave);color:var(--cap-granate);
+    font-size:.7rem;font-weight:700;vertical-align:middle;
+  }
+  .cap-steps{list-style:none;margin:0;padding:0}
+  .cap-step{display:flex;gap:14px;padding:6px 0 10px}
+  .cap-num{
+    flex:0 0 auto;width:24px;height:24px;border-radius:50%;
+    background:var(--cap-granate);color:#fff;font-size:.75rem;font-weight:700;
+    display:flex;align-items:center;justify-content:center;margin-top:1px;
+  }
+  .cap-step h3{margin:0 0 3px;font-size:.95rem;font-weight:700}
+  .cap-step p{margin:0 0 6px;font-size:.82rem;color:var(--cap-texto-2)}
+  .cap-card > p{margin:0 0 6px;font-size:.82rem;color:var(--cap-texto-2)}
+  .cap-btn{
+    display:inline-flex;align-items:center;gap:8px;
+    padding:7px 16px;border-radius:999px;font-size:.8rem;font-weight:600;
+    text-decoration:none;margin-top:6px;transition:background .15s,color .15s;
+  }
+  .cap-btn svg{width:14px;height:14px;flex:0 0 auto}
+  .cap-btn-outline{border:1px solid var(--cap-granate);color:var(--cap-granate);background:#fff}
+  .cap-btn-outline:hover{background:var(--cap-granate-suave)}
+  .cap-btn-solid{background:var(--cap-granate);color:#fff;border:1px solid var(--cap-granate)}
+  .cap-btn-solid:hover{background:var(--cap-granate-hover)}
+  .cap-btn:focus-visible{outline:2px solid var(--cap-granate);outline-offset:2px}
+  .cap-ruta{
+    display:flex;flex-wrap:wrap;align-items:center;gap:6px;
+    margin:6px 0 4px;padding:0;list-style:none;
+  }
+  .cap-ruta li{
+    display:inline-flex;align-items:center;gap:6px;
+    font-size:.78rem;font-weight:600;color:var(--cap-granate);
+  }
+  .cap-ruta .cap-chip{
+    background:var(--cap-granate-suave);border-radius:6px;padding:3px 9px;
+  }
+  .cap-ruta svg{width:12px;height:12px;color:#9aa0a6}
+  .cap-note{
+    display:flex;align-items:flex-start;gap:10px;
+    background:var(--cap-gris);border-radius:10px;padding:10px 14px;
+    font-size:.8rem;color:var(--cap-texto-2);margin-bottom:16px;
+  }
+  .cap-note svg{width:15px;height:15px;flex:0 0 auto;margin-top:1px}
+  .cap-card .cap-note{margin:8px 0 0}
+  .cap-desp summary{list-style:none;cursor:pointer;user-select:none}
+  .cap-desp summary::-webkit-details-marker{display:none}
+  .cap-desp summary svg{transition:transform .2s}
+  .cap-desp[open] summary svg{transform:rotate(180deg)}
+  .cap-desp-body{margin-top:12px}
+  .cap-desp-body p{margin:0 0 6px;font-size:.82rem;color:var(--cap-texto-2)}
+  .cap-desp-body p strong{color:var(--cap-texto)}
+</style>
+</head>
+<body style="margin:0;background:#fff">
+
+<div class="cap-wrap">
+
+  <div class="cap-grid">
+  <div class="cap-col">
+  <section class="cap-card" aria-labelledby="ins-opt">
+    <div class="cap-card-head">
+      <span class="cap-card-icon" aria-hidden="true">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20V2H6.5A2.5 2.5 0 0 0 4 4.5v15z"/><path d="M8 7h8M8 11h6"/></svg>
+      </span>
+      <div>
+        <h2 class="cap-card-title" id="ins-opt">Asignaturas optativas</h2>
+        <p class="cap-card-sub">Instrucciones específicas · Facultad de Educación</p>
+      </div>
+    </div>
+
+    <details class="cap-desp">
+      <summary class="cap-btn cap-btn-solid">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg>
+        Ver asignaturas optativas
+      </summary>
+      <div class="cap-desp-body">
+        <p>A la hora de elegir optatividad en el Grado en Maestro en Educación Primaria, si no estás cursando una mención deberás completar los <strong>30 créditos de optatividad</strong> con las asignaturas optativas <strong>NO vinculadas a las menciones</strong>.</p>
+        <div class="cap-note" role="note">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m21.73 18-8-14a2 2 0 0 0-3.46 0l-8 14A2 2 0 0 0 4 21h16a2 2 0 0 0 1.73-3z"/><path d="M12 9v4M12 17h.01"/></svg>
+          <span>Si se advierte que algún estudiante se ha matriculado en optativas vinculadas a mención sin haber sido admitido para la realización de mención, se procederá a la desmatriculación de las mismas.</span>
+        </div>
+      </div>
+    </details>
+  </section>
+  </div>
+
+  <div class="cap-col">
+  <section class="cap-card" aria-labelledby="ins-pra">
+    <div class="cap-card-head">
+      <span class="cap-card-icon" aria-hidden="true">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="7" width="20" height="14" rx="2"/><path d="M16 7V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v2"/></svg>
+      </span>
+      <div>
+        <h2 class="cap-card-title" id="ins-pra">Prácticum</h2>
+        <p class="cap-card-sub">Instrucciones específicas · Facultad de Educación</p>
+      </div>
+    </div>
+
+    <a class="cap-btn cap-btn-solid" href="https://educacion.ucm.es/practicum-facultad-educacion">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M15 3h6v6M10 14 21 3M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/></svg>
+            Ver Prácticum
+          </a>
+  </section>
+  </div>
+  </div>
+</div>
+
+</body>
+</html>
